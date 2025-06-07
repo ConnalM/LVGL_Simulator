@@ -1,0 +1,26 @@
+# PlatformIO directories
+.pio
+.pioenvs
+.piolibdeps
+.piolib
+
+# VS Code settings
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Build output
+build/
+bin/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Executable
+*.exe
