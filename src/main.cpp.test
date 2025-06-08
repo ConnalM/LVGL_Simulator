@@ -1,0 +1,86 @@
+#ifndef LV_CONF_INCLUDE_SIMPLE
+#define LV_CONF_INCLUDE_SIMPLE
+#endif
+#include <lvgl.h>
+#include <../.pio/libdeps/simulator/lvgl/src/misc/lv_timer.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+// Include our refactored components
+#include "DisplayModule/drivers/SimulatorDisplayDriver/SDLBackend.h"
+#include "DisplayModule/lvgl/screens/simulator/ExampleScreen.h"
+#include "InputModule/drivers/SimulatorInputDriver/SDLInputHandler.h"
+
+// LVGL display buffer
+static lv_disp_draw_buf_t draw_buf;
+static lv_color_t buf1[DISP_HOR_RES * 10];
+static lv_color_t buf2[DISP_HOR_RES * 10];
+
+// Display flushing callback
+void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p) {
+    // Update texture with new display data
+    SDLBackend::updateTexture(area, color_p);
+    
+    // Render the texture to the screen
+    SDLBackend::render();
+    
+    // Inform LVGL that flushing is done
+    lv_disp_flush_ready(disp);
+}
+
+int main(int argc, char** argv) {
+    printf("Starting LVGL Simulator...\n");
+    
+    // Initialize SDL backend
+    if (!SDLBackend::initialize()) {
+        printf("Failed to initialize SDL backend\n");
+        return 1;
+    }
+    
+    // Initialize LVGL
+    lv_init();
+
+    // Initialize the display buffer
+    lv_disp_draw_buf_init(&draw_buf, buf1, buf2, DISP_HOR_RES * 10);
+
+    // Initialize the display
+    static lv_disp_drv_t disp_drv;
+    lv_disp_drv_init(&disp_drv);
+    disp_drv.hor_res = DISP_HOR_RES;
+    disp_drv.ver_res = DISP_VER_RES;
+    disp_drv.flush_cb = my_disp_flush;
+    disp_drv.draw_buf = &draw_buf;
+    disp_drv.full_refresh = 1;  // Enable full screen refresh
+    lv_disp_t *disp = lv_disp_drv_register(&disp_drv);
+    
+    // Set the display to the default screen
+    lv_disp_set_default(disp);
+
+    // Show the example screen
+    ExampleScreen::show();
+    
+    // Create input handler
+    SDLInputHandler inputHandler;
+    
+    // Main loop
+    bool quit = false;
+    
+    while (!quit) {
+        // Process SDL events
+        quit = inputHandler.processEvents();
+        
+        // Call LVGL task handler
+        lv_timer_handler();
+        
+        // Small delay to prevent high CPU usage
+        SDL_Delay(5);
+    }
+    
+    // Hide the example screen
+    ExampleScreen::hide();
+    
+    // Cleanup SDL backend
+    SDLBackend::cleanup();
+    
+    return 0;
+}
