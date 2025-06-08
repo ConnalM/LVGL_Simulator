@@ -1,0 +1,41 @@
+#pragma once
+
+#include <lvgl.h>
+#include <array>
+#include <cstdint>
+#include "../../../InputModule/GT911_TouchInput.h" // For queueSystemInputEvent
+#include "../../../common/TimeManager.h"         // For timestamp
+#include "../../../common/Types.h"               // For InputEvent, InputCommand, etc.
+#include "../../../InputModule/InputCommand.h"   // For InputCommand enum
+
+// Forward declarations
+class GT911_TouchInput;
+class TimeManager;
+
+// ConfigScreen: Configuration menu screen for LVGL
+class ConfigScreen {
+public:
+    ConfigScreen();
+    ~ConfigScreen();
+
+    void Show();
+    void Hide();
+    lv_obj_t* getScreen() const { return screen_; }
+
+private:
+    lv_obj_t* screen_;
+    lv_obj_t* title_label_;
+    
+    // Menu items
+    lv_obj_t* menu_container_;
+    std::array<lv_obj_t*, 7> menu_items_;
+    
+    // Button UI elements
+    lv_obj_t* back_button_; // Button to return to previous screen
+
+    // Button event callbacks
+    static void BackButtonCallback(lv_event_t* e);
+    
+    // Debug method to check if touch is within button bounds
+    static bool IsPointInButton(lv_obj_t* btn, lv_coord_t x, lv_coord_t y);
+};

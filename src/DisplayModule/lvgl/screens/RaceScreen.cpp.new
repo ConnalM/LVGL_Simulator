@@ -1,0 +1,49 @@
+#include "RaceScreen.h"
+#include <Arduino.h>
+#include "../../../common/DebugUtils.h"
+#include "../../../common/TimeManager.h"
+#include "../../../common/Types.h"
+#include <cinttypes> // For PRIu32
+#include <memory>
+#include "../../../InputModule/InputCommand.h"
+#include "../../../InputModule/GT911_TouchInput.h"
+#include "../utils/UIUtils.h"
+#include <cinttypes> // For PRIu32
+
+// ===== RaceModeUI Implementations =====
+
+void LapsRaceUI::CreateUI(lv_obj_t* parent) {
+    // Create container with no background or border
+    container_ = lv_obj_create(parent);
+    lv_obj_remove_style_all(container_);  // Remove all styles first
+    lv_obj_set_size(container_, lv_pct(100), lv_pct(100));  // Full screen size
+    lv_obj_set_layout(container_, LV_LAYOUT_FLEX);
+    lv_obj_set_flex_flow(container_, LV_FLEX_FLOW_COLUMN);
+    lv_obj_set_style_pad_all(container_, 5, 0);
+    lv_obj_set_style_pad_row(container_, 2, 0);
+    lv_obj_set_style_pad_column(container_, 0, 0);
+    lv_obj_set_scrollbar_mode(container_, LV_SCROLLBAR_MODE_AUTO);
+    
+    // Create the race data table container with no background or border
+    race_data_table_ = lv_obj_create(container_);
+    lv_obj_remove_style_all(race_data_table_);  // Remove all styles first
+    lv_obj_set_size(race_data_table_, lv_pct(100), lv_pct(95));
+    lv_obj_set_style_pad_all(race_data_table_, 0, 0);
+    lv_obj_set_style_border_width(race_data_table_, 0, 0);
+    lv_obj_set_style_bg_opa(race_data_table_, LV_OPA_0, 0);
+    lv_obj_set_style_radius(race_data_table_, 0, 0);  // No rounded corners
+    lv_obj_set_flex_flow(race_data_table_, LV_FLEX_FLOW_COLUMN);
+    lv_obj_set_flex_grow(race_data_table_, 1);  // Allow table to grow to fill space
+    
+    // Create table headers and initial rows
+    CreateTableHeaders();
+    CreateLaneRows(numLanes_); // Create rows for configured number of lanes
+    
+    // Update row heights based on number of lanes
+    UpdateRowHeights(numLanes_);
+}
+
+void LapsRaceUI::Update() {
+    // This method is called periodically to update the UI
+    // We don't need to do anything here since the race data is updated via UpdateRaceData
+}

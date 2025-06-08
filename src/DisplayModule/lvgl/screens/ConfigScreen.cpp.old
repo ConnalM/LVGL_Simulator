@@ -1,0 +1,133 @@
+#include "ConfigScreen.h"
+#include <Arduino.h>
+#include "../../../common/DebugUtils.h"
+#include "../../../common/Types.h"
+#include "../../../InputModule/InputCommand.h"
+#include "../../../InputModule/GT911_TouchInput.h"
+#include "../../../common/TimeManager.h"
+
+ConfigScreen::ConfigScreen() 
+    : screen_(nullptr), 
+      title_label_(nullptr),
+      menu_container_(nullptr),
+      back_button_(nullptr) {
+    
+    // Create the screen
+    screen_ = lv_obj_create(NULL);
+    lv_obj_set_style_bg_color(screen_, lv_color_hex(0x000000), LV_PART_MAIN);
+    
+    // Create title
+    title_label_ = lv_label_create(screen_);
+    lv_label_set_text(title_label_, "CONFIGURATION");
+    lv_obj_set_style_text_color(title_label_, lv_color_hex(0xFFFFFF), 0);
+    lv_obj_set_style_text_font(title_label_, &lv_font_montserrat_24, 0);
+    lv_obj_align(title_label_, LV_ALIGN_TOP_MID, 0, 20);
+    
+    // Create menu container with transparent background
+    menu_container_ = lv_obj_create(screen_);
+    lv_obj_set_size(menu_container_, lv_pct(90), lv_pct(70));
+    lv_obj_align(menu_container_, LV_ALIGN_CENTER, 0, 0);
+    lv_obj_set_style_bg_opa(menu_container_, LV_OPA_TRANSP, LV_PART_MAIN);  // Make container transparent
+    lv_obj_set_style_border_width(menu_container_, 0, LV_PART_MAIN);        // Remove border
+    lv_obj_set_style_pad_all(menu_container_, 0, LV_PART_MAIN);             // Remove padding
+    lv_obj_set_flex_flow(menu_container_, LV_FLEX_FLOW_COLUMN);
+    lv_obj_set_flex_align(menu_container_, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
+    
+    // Ensure the screen background is black
+    lv_obj_set_style_bg_color(screen_, lv_color_black(), LV_PART_MAIN);
+    
+    // Create menu items
+    const char* menu_texts[] = {
+        "1. Set Number of Laps",
+        "2. Set Number of Lanes",
+        "3. Change Race Mode",
+        "4. Set Race Time",
+        "5. Toggle Reaction Time",
+        "6. Enable/Disable Lane",
+        "7. Add/Remove Racer"
+    };
+    
+    for (int i = 0; i < 7; i++) {
+        menu_items_[i] = lv_label_create(menu_container_);
+        lv_label_set_text(menu_items_[i], menu_texts[i]);
+        lv_obj_set_style_text_color(menu_items_[i], lv_color_hex(0xFFFFFF), 0);
+        lv_obj_set_style_text_font(menu_items_[i], &lv_font_montserrat_16, 0);
+        lv_obj_set_style_pad_bottom(menu_items_[i], 10, 0);
+    }
+    
+    // Create back button
+    back_button_ = lv_btn_create(screen_);
+    lv_obj_set_size(back_button_, 200, 50);
+    lv_obj_align(back_button_, LV_ALIGN_BOTTOM_MID, 0, -20);
+    
+    // Set user data to this instance for the callback
+    lv_obj_set_user_data(back_button_, this);
+    lv_obj_add_event_cb(back_button_, BackButtonCallback, LV_EVENT_CLICKED, this);
+    
+    lv_obj_t* btn_label = lv_label_create(back_button_);
+    lv_label_set_text(btn_label, "Back to Main Menu");
+    lv_obj_center(btn_label);
+    
+    // Debug print to verify button creation
+    DPRINTLN("Back button created and configured");
+}
+
+ConfigScreen::~ConfigScreen() {
+    // All LVGL objects are children of screen_, so deleting the screen will delete all children
+    if (screen_) {
+        lv_obj_del(screen_);
+        screen_ = nullptr;
+        title_label_ = nullptr;
+        menu_container_ = nullptr;
+        back_button_ = nullptr;
+        menu_items_.fill(nullptr);
+    }
+}
+
+void ConfigScreen::Show() {
+    if (screen_) {
+        lv_scr_load_anim(screen_, LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0, false);
+    } else {
+        DPRINTLN("Cannot show ConfigScreen: screen_ is null");
+    }
+}
+
+void ConfigScreen::Hide() {
+    // No need to explicitly hide the screen as LVGL handles screen transitions
+    // This method is kept for interface compatibility
+}
+
+bool ConfigScreen::IsPointInButton(lv_obj_t* btn, lv_coord_t x, lv_coord_t y) {
+    if (!btn) return false;
+    
+    lv_area_t btn_coords;
+    lv_obj_get_coords(btn, &btn_coords);
+    
+    return x >= btn_coords.x1 && x <= btn_coords.x2 &&
+           y >= btn_coords.y1 && y <= btn_coords.y2;
+}
+
+void ConfigScreen::BackButtonCallback(lv_event_t* e) {
+    if (e->code != LV_EVENT_CLICKED) return;
+    
+    // Get the ConfigScreen instance
+    ConfigScreen* self = static_cast<ConfigScreen*>(lv_event_get_user_data(e));
+    if (!self) {
+        DPRINTLN("ConfigScreen instance is null in BackButtonCallback");
+        return;
+    }
+    
+    DPRINTLN("Back button pressed in ConfigScreen");
+    
+    // Create InputEvent for returning to main menu
+    InputEvent event;
+    event.command = InputCommand::ReturnToPrevious; // Use ReturnToPrevious command
+    event.value = 0; // Not used for ReturnToPrevious
+    event.sourceId = static_cast<int>(InputSourceId::TOUCH);
+    event.timestamp = TimeManager::getInstance()->GetCurrentTimeMs();
+    event.target = InputTarget::Race;  // Target race for navigation
+    
+    // Queue the input event through the input manager
+    GT911_TouchInput::queueSystemInputEvent(event);
+    DPRINTLN("Queued ReturnToPrevious event");
+}
