@@ -6,8 +6,8 @@
 #include <lvgl.h>
 
 // Screen dimensions
-#define DISP_HOR_RES 480
-#define DISP_VER_RES 320
+#define DISP_HOR_RES 800
+#define DISP_VER_RES 480
 
 /**
  * @brief Class to handle SDL2 initialization and management for the LVGL simulator

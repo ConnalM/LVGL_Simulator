@@ -4,10 +4,10 @@ from pathlib import Path
 
 def copy_sdl_dll():
     # Source path to SDL2.dll
-    sdl_dll_src = r"C:\SDL2\i686-w64-mingw32\bin\SDL2.dll"
+    sdl_dll_src = r"C:\SDL2\x86_64-w64-mingw32\bin\SDL2.dll"
     
-    # Destination path in the build directory
-    build_dir = Path(".pio/build/native")
+    # Destination path in the simulator build directory
+    build_dir = Path(".pio/build/simulator")
     sdl_dll_dst = build_dir / "SDL2.dll"
     
     # Create build directory if it doesn't exist
