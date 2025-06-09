@@ -1,6 +1,11 @@
 #include "GT911_TouchInput.h"
 #include "../common/DebugUtils.h" // Use standard debug header
+
+#ifdef SIMULATOR
+#include "../common/ArduinoCompat.h" // Simulator compatibility
+#else
 #include <Arduino.h> // For map() and constrain() functions
+#endif
 #include "DisplayModule/DisplayManager.h"
 
 // Initialize static members
@@ -32,6 +37,12 @@ bool GT911_TouchInput::initializeInput() {
                  TOUCH_GT911_SDA, TOUCH_GT911_SCL, TOUCH_GT911_INT, TOUCH_GT911_RST);
     Serial.printf("Display dimensions: %dx%d\n", TOUCH_MAP_X1, TOUCH_MAP_Y1);
 
+    #ifdef SIMULATOR
+    // In simulator mode, we don't need a physical touch controller
+    // We'll use SDL events for touch input instead
+    Serial.println("Using simulator touch input");
+    Serial.printf("Simulated touch panel resolution: %dx%d\n", TOUCH_PANEL_WIDTH, TOUCH_PANEL_HEIGHT);
+#else
     // Create the touch controller instance with actual touch panel resolution
     _touchController = new TAMC_GT911(TOUCH_GT911_SDA, TOUCH_GT911_SCL, 
                                      TOUCH_GT911_INT, TOUCH_GT911_RST, 
@@ -52,6 +63,7 @@ bool GT911_TouchInput::initializeInput() {
     // Set rotation
     _touchController->setRotation(ROTATION_NORMAL);
     Serial.println("Set touch rotation to NORMAL");
+#endif
 
     // Initialize LVGL input device
     static lv_indev_drv_t indev_drv;
@@ -165,6 +177,19 @@ void GT911_TouchInput::readRawTouch() {
     static uint32_t lastTouchTime = 0;
     uint32_t now = millis();
     
+#ifdef SIMULATOR
+    // In simulator mode, we use SDL events for touch input
+    // This is handled by the SDLInputHandler class, which will update
+    // _lastTouchX, _lastTouchY, and _lastTouchState directly
+    
+    // For testing, we can simulate touch events here
+    // This is just a placeholder - in a real implementation,
+    // the SDL event system would update these values
+    
+    // For now, we'll just leave the touch state as it is
+    // The actual touch events will be handled by SDL
+    
+#else
     if (!_touchController) {
         return;
     }
@@ -205,4 +230,5 @@ void GT911_TouchInput::readRawTouch() {
             lastDebugOutput = now;
         }
     }
+#endif
 }

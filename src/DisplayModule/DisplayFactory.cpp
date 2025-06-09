@@ -1,10 +1,15 @@
 #include "DisplayFactory.h"
 #include "../common/DebugUtils.h"
 #include "../ModuleToggle.h"
+
+#ifndef SIMULATOR
 #include "ESP32_8048S070_Lvgl_DisplayDriver.h"
+#include "SerialDisplay.h"
+#endif
 
 #ifdef SIMULATOR
 #include "drivers/SimulatorDisplayDriver/SimulatorDisplayAdapter.h"
+#include "drivers/SimulatorDisplayDriver/SimulatorSerialDisplay.h"
 #endif
 
 // Static instance for singleton pattern
@@ -14,6 +19,11 @@ DisplayFactory::DisplayFactory()
     : _serialDisplay(nullptr)
     , _lcdDisplay(nullptr){
     DPRINTLN("DisplayFactory created");
+}
+
+DisplayFactory::~DisplayFactory() {
+    // Destructor implementation
+    DPRINTLN("DisplayFactory destroyed");
 }
 
 DisplayFactory& DisplayFactory::getInstance() {
@@ -28,7 +38,11 @@ IBaseDisplay* DisplayFactory::createDisplay(DisplayType type) {
     switch (type) {
         case DisplayType::Serial:
             if (_serialDisplay == nullptr) {
+#ifdef SIMULATOR
+                _serialDisplay = new SimulatorSerialDisplay();
+#else
                 _serialDisplay = new SerialDisplay();
+#endif
             }
             return _serialDisplay;
             
@@ -49,7 +63,11 @@ IBaseDisplay* DisplayFactory::createDisplay(DisplayType type) {
         default:
             // Default to serial display
             if (_serialDisplay == nullptr) {
+#ifdef SIMULATOR
+                _serialDisplay = new SimulatorSerialDisplay();
+#else
                 _serialDisplay = new SerialDisplay();
+#endif
             }
             return _serialDisplay;
     }

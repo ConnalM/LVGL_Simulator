@@ -1,5 +1,11 @@
 #pragma once
+
+#ifndef SIMULATOR
 #include <Arduino.h>
+#else
+// Include Arduino compatibility layer for simulator
+#include "../common/ArduinoCompat.h"
+#endif
 #include <vector>
 #include "../common/Types.h"
 

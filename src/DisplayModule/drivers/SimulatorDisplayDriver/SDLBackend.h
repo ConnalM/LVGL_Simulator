@@ -17,10 +17,12 @@ public:
     /**
      * @brief Initialize SDL2 and create window, renderer, and texture
      * 
+     * @param width Width of the display in pixels
+     * @param height Height of the display in pixels
      * @return true if initialization was successful
      * @return false if initialization failed
      */
-    static bool initialize();
+    static bool init(int width, int height);
     
     /**
      * @brief Clean up SDL2 resources

@@ -1,7 +1,7 @@
 #pragma once
 
-#ifdef NATIVE_BUILD
-#include "../ArduinoCompat.h"
+#ifdef SIMULATOR
+#include "ArduinoCompat.h"
 #else
 #include <Arduino.h>
 #endif

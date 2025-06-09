@@ -1,5 +1,11 @@
 #include "TimeManager.h"
+
+#ifdef SIMULATOR
+#include "ArduinoCompat.h"
+#include <chrono>
+#else
 #include "Arduino.h"
+#endif
 
 bool TimeManager::Initialize() {
     m_currentTimeMs = millis();

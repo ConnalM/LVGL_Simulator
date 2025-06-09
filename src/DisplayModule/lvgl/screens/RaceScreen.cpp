@@ -1,5 +1,10 @@
 #include "RaceScreen.h"
+
+#ifdef SIMULATOR
+#include "../../../common/ArduinoCompat.h"
+#else
 #include <Arduino.h>
+#endif
 #include "../../../common/DebugUtils.h"
 #include "../../../common/TimeManager.h"
 #include "../../../common/Types.h"

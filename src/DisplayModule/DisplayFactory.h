@@ -1,6 +1,12 @@
 #pragma once
 #include "DisplayModule.h"
+#ifdef SIMULATOR
+// Simulator-specific includes
+#include "drivers/SimulatorDisplayDriver/SimulatorDisplayAdapter.h"
+#else
+// Hardware-specific includes
 #include "ESP32_8048S070_Lvgl_DisplayDriver.h"
+#endif
 #include "SerialDisplay.h"
 // #include "WebDisplay.h"
 

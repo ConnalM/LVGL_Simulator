@@ -211,7 +211,7 @@ public:
      * @param y Y coordinate
      * @param color Color value
      */
-    void drawPixel(int16_t x, int16_t y, uint16_t color) override;
+    void drawPixel(int16_t x, int16_t y, uint16_t color);
     
     /**
      * @brief Draw a line
@@ -222,7 +222,7 @@ public:
      * @param y1 End Y coordinate
      * @param color Color value
      */
-    void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color) override;
+    void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
     
     /**
      * @brief Draw a triangle
@@ -235,7 +235,7 @@ public:
      * @param y2 Third point Y coordinate
      * @param color Color value
      */
-    void drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color) override;
+    void drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color);
     
     /**
      * @brief Fill a triangle
@@ -248,11 +248,13 @@ public:
      * @param y2 Third point Y coordinate
      * @param color Color value
      */
-    void fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color) override;
+    void fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t color);
 
-private:
+public:
     SimulatorDisplayAdapter();
     ~SimulatorDisplayAdapter();
+    
+private:
     
     // Cursor position
     int cursor_x_;

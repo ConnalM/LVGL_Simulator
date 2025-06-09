@@ -1,6 +1,10 @@
 #pragma once
 
+#ifdef SIMULATOR
+#include "common/ArduinoCompat.h"
+#else
 #include <Arduino.h>
+#endif
 #include <vector>
 #include <functional>
 #include "common/TimeManager.h"

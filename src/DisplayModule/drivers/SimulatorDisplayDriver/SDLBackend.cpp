@@ -6,7 +6,7 @@ SDL_Renderer* SDLBackend::_renderer = NULL;
 SDL_Texture* SDLBackend::_texture = NULL;
 bool SDLBackend::_initialized = false;
 
-bool SDLBackend::initialize() {
+bool SDLBackend::init(int width, int height) {
     if (_initialized) {
         return true;
     }
@@ -20,7 +20,7 @@ bool SDLBackend::initialize() {
     // Create window
     _window = SDL_CreateWindow("LVGL Simulator",
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-        DISP_HOR_RES, DISP_VER_RES, SDL_WINDOW_SHOWN);
+        width, height, SDL_WINDOW_SHOWN);
     
     if (!_window) {
         printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
@@ -38,11 +38,11 @@ bool SDLBackend::initialize() {
     }
 
     // Create texture that stores the display content
-    printf("Creating texture with size: %dx%d\n", DISP_HOR_RES, DISP_VER_RES);
+    printf("Creating texture with size: %dx%d\n", width, height);
     _texture = SDL_CreateTexture(_renderer,
                                SDL_PIXELFORMAT_RGB565,
                                SDL_TEXTUREACCESS_STREAMING,
-                               DISP_HOR_RES, DISP_VER_RES);
+                               width, height);
     if (!_texture) {
         printf("Texture could not be created! SDL_Error: %s\n", SDL_GetError());
         SDL_DestroyRenderer(_renderer);

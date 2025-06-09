@@ -111,20 +111,41 @@ void SimulatorDisplayAdapter::drawLine(int16_t x0, int16_t y0, int16_t x1, int16
 }
 
 void SimulatorDisplayAdapter::drawRect(int x, int y, int w, int h, uint32_t color) {
-    // In LVGL, we could draw this on a canvas if needed
-    // For now, we'll just log it
+    // Create a rectangle object using LVGL
+    lv_obj_t* rect = lv_obj_create(lv_scr_act());
+    lv_obj_set_pos(rect, x, y);
+    lv_obj_set_size(rect, w, h);
+    lv_obj_set_style_bg_color(rect, lv_color_hex(color), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(rect, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(rect, lv_color_hex(color), LV_PART_MAIN | LV_STATE_DEFAULT);
+    
+    // Log the operation
     std::cout << "SimulatorDisplayAdapter: drawRect(" << x << ", " << y << ", " << w << ", " << h << ", " << color << ")" << std::endl;
 }
 
 void SimulatorDisplayAdapter::fillRect(int x, int y, int w, int h, uint32_t color) {
-    // In LVGL, we could draw this on a canvas if needed
-    // For now, we'll just log it
+    // Create a filled rectangle object using LVGL
+    lv_obj_t* rect = lv_obj_create(lv_scr_act());
+    lv_obj_set_pos(rect, x, y);
+    lv_obj_set_size(rect, w, h);
+    lv_obj_set_style_bg_color(rect, lv_color_hex(color), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(rect, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    
+    // Log the operation
     std::cout << "SimulatorDisplayAdapter: fillRect(" << x << ", " << y << ", " << w << ", " << h << ", " << color << ")" << std::endl;
 }
 
 void SimulatorDisplayAdapter::drawCircle(int x, int y, int r, uint32_t color) {
-    // In LVGL, we could draw this on a canvas if needed
-    // For now, we'll just log it
+    // Create a circle object using LVGL
+    lv_obj_t* circle = lv_obj_create(lv_scr_act());
+    lv_obj_set_pos(circle, x - r, y - r);
+    lv_obj_set_size(circle, 2 * r, 2 * r);
+    lv_obj_set_style_radius(circle, r, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(circle, LV_OPA_TRANSP, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(circle, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(circle, lv_color_hex(color), LV_PART_MAIN | LV_STATE_DEFAULT);
+    
+    // Log the operation
     std::cout << "SimulatorDisplayAdapter: drawCircle(" << x << ", " << y << ", " << r << ", " << color << ")" << std::endl;
 }
 
@@ -181,7 +202,7 @@ void SimulatorDisplayAdapter::drawMain() {
     lv_label_set_text(title, "MAIN MENU");
     lv_obj_align(title, LV_ALIGN_TOP_MID, 0, 20);
     lv_obj_set_style_text_color(title, lv_color_white(), 0);
-    lv_obj_set_style_text_font(title, &lv_font_montserrat_24, 0);
+    lv_obj_set_style_text_font(title, &lv_font_montserrat_14, 0);
     
     // Create buttons
     lv_obj_t* race_btn = lv_btn_create(screen);
@@ -227,7 +248,9 @@ void SimulatorDisplayAdapter::drawRaceActive(RaceMode raceMode) {
     
     // Create and show the race screen
     static RaceScreen raceScreen;
-    raceScreen.Show(raceMode);
+    // Just show the race screen without passing the race mode
+    // The race mode would need to be set separately or handled differently
+    raceScreen.Show();
 }
 
 void SimulatorDisplayAdapter::startLightSequence() {
