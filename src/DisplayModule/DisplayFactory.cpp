@@ -3,6 +3,10 @@
 #include "../ModuleToggle.h"
 #include "ESP32_8048S070_Lvgl_DisplayDriver.h"
 
+#ifdef SIMULATOR
+#include "drivers/SimulatorDisplayDriver/SimulatorDisplayAdapter.h"
+#endif
+
 // Static instance for singleton pattern
 DisplayFactory* DisplayFactory::_instance = nullptr;
 
@@ -30,7 +34,11 @@ IBaseDisplay* DisplayFactory::createDisplay(DisplayType type) {
             
         case DisplayType::LCD:
             if (_lcdDisplay == nullptr) {
+#ifdef SIMULATOR
+                _lcdDisplay = new SimulatorDisplayAdapter();
+#else
                 _lcdDisplay = new ESP32_8048S070_Lvgl_DisplayDriver();
+#endif
             }
             return _lcdDisplay;
             

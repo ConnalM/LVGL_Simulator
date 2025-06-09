@@ -1,13 +1,34 @@
 #include "DisplayManager.h"
 #include "DisplayFactory.h"
+
+#ifdef SIMULATOR
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#else
 #include "ESP32_8048S070_Lvgl_DisplayDriver.h"
 #include <Ticker.h>
+#endif
 
 // Throttle debug prints to once every 5 seconds
+#ifdef SIMULATOR
+static auto lastDebugPrint = std::chrono::steady_clock::now();
+const auto DEBUG_THROTTLE_MS = std::chrono::milliseconds(5000);
+
+// Helper macro for throttled debug prints in simulator
+#define DEBUG_PRINT_METHOD() \
+    do { \
+        auto now = std::chrono::steady_clock::now(); \
+        if (std::chrono::duration_cast<std::chrono::milliseconds>(now - lastDebugPrint) > DEBUG_THROTTLE_MS) { \
+            std::cout << "[DisplayManager] " << __FUNCTION__ << std::endl; \
+            lastDebugPrint = now; \
+        } \
+    } while(0)
+#else
 static unsigned long lastDebugPrint = 0;
 const unsigned long DEBUG_THROTTLE_MS = 5000;
 
-// Helper macro for throttled debug prints
+// Helper macro for throttled debug prints in production
 #define DEBUG_PRINT_METHOD() \
     do { \
         unsigned long now = millis(); \
@@ -16,6 +37,36 @@ const unsigned long DEBUG_THROTTLE_MS = 5000;
             lastDebugPrint = now; \
         } \
     } while(0)
+#endif
+
+// Helper function for cross-platform logging
+#ifdef SIMULATOR
+void DisplayManagerLog(const char* message) {
+    std::cout << "[DisplayManager] " << message << std::endl;
+}
+
+void DisplayManagerLogF(const char* format, ...) {
+    char buffer[256];
+    va_list args;
+    va_start(args, format);
+    vsnprintf(buffer, sizeof(buffer), format, args);
+    va_end(args);
+    std::cout << "[DisplayManager] " << buffer << std::endl;
+}
+#else
+void DisplayManagerLog(const char* message) {
+    Serial.println(message);
+}
+
+void DisplayManagerLogF(const char* format, ...) {
+    char buffer[256];
+    va_list args;
+    va_start(args, format);
+    vsnprintf(buffer, sizeof(buffer), format, args);
+    va_end(args);
+    Serial.println(buffer);
+}
+#endif
 
 // Static instance for singleton pattern
 DisplayManager* DisplayManager::_instance = nullptr;
@@ -44,28 +95,28 @@ bool DisplayManager::initialize(DisplayType* displayTypes, int count) {
     DEBUG_PRINT_METHOD();
     // Skip if already initialized
     if (_initialized) {
-        Serial.println(F("DisplayManager: Already initialized"));
+        DisplayManagerLog("DisplayManager: Already initialized");
         return true;
     }
     
-    Serial.println(F("DisplayManager: Initializing displays..."));
+    DisplayManagerLog("DisplayManager: Initializing displays...");
     
     // Initialize each display type
     bool success = true;
     for (int i = 0; i < count; i++) {
-        Serial.printf("DisplayManager: Creating display type %d\n", (int)displayTypes[i]);
+        DisplayManagerLogF("DisplayManager: Creating display type %d", (int)displayTypes[i]);
         IBaseDisplay* display = DisplayFactory::getInstance().getDisplay(displayTypes[i]);
         if (display == nullptr) {
-            Serial.printf("DisplayManager: Failed to get display type %d\n", (int)displayTypes[i]);
+            DisplayManagerLogF("DisplayManager: Failed to get display type %d", (int)displayTypes[i]);
             success = false;
             continue;
         }
         
         // Initialize the display
-        Serial.printf("DisplayManager: Initializing display type %d\n", (int)displayTypes[i]);
+        DisplayManagerLogF("DisplayManager: Initializing display type %d", (int)displayTypes[i]);
         bool initResult = display->initialize();
         if (!initResult) {
-            Serial.printf("DisplayManager: Failed to initialize display type %d\n", (int)displayTypes[i]);
+            DisplayManagerLogF("DisplayManager: Failed to initialize display type %d", (int)displayTypes[i]);
             success = false;
             continue;
         }
@@ -74,17 +125,17 @@ bool DisplayManager::initialize(DisplayType* displayTypes, int count) {
         _activeDisplays[_activeDisplayCount] = display;
         _activeDisplayTypes[_activeDisplayCount] = displayTypes[i];
         _activeDisplayCount++;
-        Serial.printf("DisplayManager: Successfully initialized display type %d\n", (int)displayTypes[i]);
+        DisplayManagerLogF("DisplayManager: Successfully initialized display type %d", (int)displayTypes[i]);
     }
     
     if (!success) {
-        Serial.println(F("DisplayManager: Failed to initialize some displays"));
+        DisplayManagerLog("DisplayManager: Failed to initialize some displays");
     } else {
-        Serial.println(F("DisplayManager: All displays initialized successfully"));
+        DisplayManagerLog("DisplayManager: All displays initialized successfully");
     }
     
     _initialized = success;
-    Serial.println(F("DisplayManager: Initialization complete"));
+    DisplayManagerLog("DisplayManager: Initialization complete");
     return success;
 }
 

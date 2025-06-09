@@ -1,5 +1,11 @@
 #pragma once
+
+#ifdef SIMULATOR
+#include <string>
+#else
 #include <Arduino.h>
+#endif
+
 #include "common/Types.h"
 #include "RaceModule/RaceModule.h"
 #include "DisplayModule/DisplayModule.h"

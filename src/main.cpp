@@ -10,7 +10,9 @@
     // Simulator-specific includes
     #include <../.pio/libdeps/native/lvgl/src/misc/lv_timer.h>
     #include "DisplayModule/drivers/SimulatorDisplayDriver/SDLBackend.h"
-    #include "DisplayModule/lvgl/screens/simulator/ExampleScreen.h"
+    #include "DisplayModule/drivers/SimulatorDisplayDriver/SimulatorDisplayAdapter.h"
+    #include "DisplayModule/DisplayManager.h"
+    #include "DisplayModule/DisplayFactory.h"
     #include "InputModule/drivers/SimulatorInputDriver/SDLInputHandler.h"
 #else
     // Production-specific includes
@@ -165,9 +167,34 @@ int main(int argc, char** argv) {
     lv_indev_t *mouse_indev = lv_indev_drv_register(&indev_drv);
     log_message("Mouse input device registered");
 
-    // Show the example screen
-    ExampleScreen::show();
-    log_message("Example screen shown");
+    // Initialize DisplayManager and DisplayFactory
+    DisplayManager& displayManager = DisplayManager::getInstance();
+    DisplayFactory& displayFactory = DisplayFactory::getInstance();
+    log_message("DisplayManager and DisplayFactory initialized");
+    
+    // Create and initialize the LCD display (which will be our SimulatorDisplayAdapter)
+    IGraphicalDisplay* display = displayFactory.createGraphicalDisplay(DisplayType::LCD);
+    if (display) {
+        display->initialize();
+        displayManager.registerDisplay(display);
+        log_message("SimulatorDisplayAdapter registered with DisplayManager");
+        
+        // Show the race screen through DisplayManager
+        displayManager.showRaceActive(RaceMode::TIME_TRIAL);
+        log_message("Race screen shown through DisplayManager");
+    } else {
+        log_message("ERROR: Failed to create SimulatorDisplayAdapter");
+    }
+    
+    // Create a timer to update the display every 100ms
+    static lv_timer_t* displayUpdateTimer = nullptr;
+    displayUpdateTimer = lv_timer_create([](lv_timer_t* timer) {
+        DisplayManager* manager = static_cast<DisplayManager*>(timer->user_data);
+        if (manager) {
+            manager->update();
+        }
+    }, 100, &displayManager);
+    log_message("Race screen update timer created");
     
     // Create a simple keep-alive timer that refreshes the screen periodically
     // This prevents the simulator from exiting prematurely
@@ -221,9 +248,6 @@ int main(int argc, char** argv) {
     }
     
     log_message("Main loop exited with quit = %d", quit);
-    
-    // Hide the example screen
-    ExampleScreen::hide();
     
     // Cleanup SDL backend
     SDLBackend::cleanup();
