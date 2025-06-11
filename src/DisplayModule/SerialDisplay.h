@@ -1,12 +1,18 @@
 #pragma once
 
 #include "DisplayModule.h"
+#include <thread>
+#include <mutex>
+#include <queue>
+#include <atomic>
+#include <condition_variable>
 
 /**
  * @brief Serial display implementation
  * 
  * This class implements the IBaseDisplay interface for Serial output.
  * It handles formatting and displaying text on the Serial console.
+ * It also provides non-blocking input handling from the terminal.
  */
 class SerialDisplay : public IBaseDisplay {
 public:
@@ -31,7 +37,7 @@ public:
     /**
      * @brief Update the display
      * 
-     * This is a no-op for Serial display.
+     * Processes any pending input events.
      */
     void update() override;
     
@@ -78,9 +84,53 @@ public:
      * @return DisplayType The display type (Serial)
      */
     DisplayType getDisplayType() const override;
+
+    /**
+     * @brief Check if input is available
+     * 
+     * @return true if there is input waiting to be read
+     * @return false if no input is available
+     */
+    bool available() const;
+
+    /**
+     * @brief Read a single character from input
+     * 
+     * @return int The character read, or -1 if no input is available
+     */
+    int read();
+
+    /**
+     * @brief Read a line of input
+     * 
+     * @param buffer The buffer to store the input
+     * @param size The size of the buffer
+     * @param echo Whether to echo input to the display (default: true)
+     * @return int The number of characters read, or -1 if no input is available
+     */
+    int readLine(char* buffer, size_t size, bool echo = true);
     
 private:
+    // Input thread function
+    void inputThreadFunc();
+    
+    // Process a single character of input
+    void processInputChar(char c);
+    
     bool _initialized;
     int _width;
     int _height;
+    
+    // Input handling
+    std::thread _inputThread;
+    std::atomic<bool> _running{false};
+    std::queue<char> _inputQueue;
+    mutable std::mutex _inputMutex;
+    std::condition_variable _inputCond;
+    
+    // Line buffer for readLine
+    std::string _lineBuffer;
+    std::mutex _lineMutex;
+    std::condition_variable _lineCond;
+    bool _lineReady{false};
 };
