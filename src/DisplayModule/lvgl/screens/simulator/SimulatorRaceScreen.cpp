@@ -1,9 +1,8 @@
 #include "SimulatorRaceScreen.h"
 #include <cstdio>
 #include <cstring>
+#include "common/log_message.h"
 
-// Forward declaration of log_message function from main.cpp
-extern void log_message(const char* format, ...);
 
 // Constructor
 SimulatorRaceScreen::SimulatorRaceScreen() :

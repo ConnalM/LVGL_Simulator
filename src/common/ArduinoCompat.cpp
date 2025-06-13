@@ -4,9 +4,6 @@
 #include <thread>
 #include <algorithm>
 
-// Define the global Serial object
-SerialClass Serial;
-
 // Time functions implementation
 static auto start_time = std::chrono::high_resolution_clock::now();
 

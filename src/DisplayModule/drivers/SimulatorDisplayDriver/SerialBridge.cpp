@@ -2,9 +2,8 @@
 #include <Windows.h>
 #include <iostream>
 #include <chrono>
+#include "common/log_message.h"
 
-// Forward declaration for log_message from main.cpp
-extern void log_message(const char* format, ...);
 
 // Singleton instance
 SerialBridge& SerialBridge::getInstance() {

@@ -120,39 +120,14 @@ namespace std {
 // Define F() macro for simulator (just returns the string as-is)
 #define F(x) x
 
-// Define a Serial class for simulator
-class SerialClass {
-public:
-    void begin(unsigned long baud) { /* No-op in simulator */ }
-    void print(const char* str) { std::cout << str; }
-    void print(const std::string& str) { std::cout << str; }
-    void print(int num) { std::cout << num; }
-    void print(unsigned int num) { std::cout << num; }
-    void print(long num) { std::cout << num; }
-    void print(unsigned long num) { std::cout << num; }
-    void print(float num) { std::cout << num; }
-    void print(double num) { std::cout << num; }
-    
-    void println(const char* str) { std::cout << str << std::endl; }
-    void println(const std::string& str) { std::cout << str << std::endl; }
-    void println(int num) { std::cout << num << std::endl; }
-    void println(unsigned int num) { std::cout << num << std::endl; }
-    void println(long num) { std::cout << num << std::endl; }
-    void println(unsigned long num) { std::cout << num << std::endl; }
-    void println(float num) { std::cout << num << std::endl; }
-    void println(double num) { std::cout << num << std::endl; }
-    void println() { std::cout << std::endl; }
-    
-    template<typename... Args>
-    void printf(const char* format, Args... args) {
-        char buffer[256];
-        snprintf(buffer, sizeof(buffer), format, args...);
-        std::cout << buffer;
-    }
-};
-
-// Create a global Serial object
-extern SerialClass Serial;
+// Serial HAL: Provide extern Serial object for both simulator and production
+#ifdef SIMULATOR
+    #include "Sim/TerminalSerial.h"
+    extern TerminalSerial Serial;
+#else
+    #include <HardwareSerial.h>
+    extern HardwareSerial Serial;
+#endif
 
 // Add other Arduino compatibility as needed
 

@@ -1,415 +1,163 @@
-2025-06-09 14:57:35: Simulator starting...
-2025-06-09 14:57:35: SDL backend initialized successfully
-2025-06-09 14:57:35: LVGL initialized
-2025-06-09 14:57:35: Display buffer initialized
-2025-06-09 14:57:35: Display driver registered
-2025-06-09 14:57:35: Mouse input device registered
-2025-06-09 14:57:35: DisplayManager and DisplayFactory initialized
-2025-06-09 14:57:35: SimulatorDisplayAdapter registered with DisplayManager
-2025-06-09 14:57:35: NOTICE: Skipping race screen display to prevent potential crash
-2025-06-09 14:57:35: Simple LVGL screen created successfully
-2025-06-09 14:57:35: Race screen update timer created
-2025-06-09 14:57:35: Entering main loop at time: 145 ms
-2025-06-09 14:57:35: SDLInputHandler started at: 145 ms
-2025-06-09 14:57:35: SDL Event #1: Type=512 at time 157 ms (elapsed: 12 ms)
-2025-06-09 14:57:35: SDL Event #2: Type=512 at time 157 ms (elapsed: 12 ms)
-2025-06-09 14:57:35: SDL Event #3: Type=770 at time 157 ms (elapsed: 12 ms)
-2025-06-09 14:57:35: SDL Event #4: Type=512 at time 157 ms (elapsed: 12 ms)
-2025-06-09 14:57:50: WARNING: Simulator has been running for 15006 ms
-2025-06-09 14:57:51: Still running... loop count: 1000, time: 15937 ms (elapsed: 15792 ms)
-2025-06-09 14:57:51: LVGL timer status: 0 active timers
-2025-06-09 14:58:07: Still running... loop count: 2000, time: 31562 ms (elapsed: 31417 ms)
-2025-06-09 14:58:07: LVGL timer status: 0 active timers
-2025-06-09 14:58:22: Still running... loop count: 3000, time: 47178 ms (elapsed: 47033 ms)
-2025-06-09 14:58:22: LVGL timer status: 0 active timers
-2025-06-09 14:58:34: SDL Event #5: Type=512 at time 58655 ms (elapsed: 58510 ms)
-2025-06-09 14:58:34: SDL Event #6: Type=1024 at time 58655 ms (elapsed: 58510 ms)
-2025-06-09 14:58:34: Mouse motion event #6: position x=786, y=311
-2025-06-09 14:58:34: SDL Event #7: Type=1024 at time 58665 ms (elapsed: 58520 ms)
-2025-06-09 14:58:34: Mouse motion event #7: position x=767, y=299
-2025-06-09 14:58:34: SDL Event #8: Type=1024 at time 58687 ms (elapsed: 58542 ms)
-2025-06-09 14:58:34: Mouse motion event #8: position x=744, y=285
-2025-06-09 14:58:34: SDL Event #9: Type=1024 at time 58697 ms (elapsed: 58552 ms)
-2025-06-09 14:58:34: Mouse motion event #9: position x=739, y=282
-2025-06-09 14:58:34: SDL Event #10: Type=1024 at time 58718 ms (elapsed: 58573 ms)
-2025-06-09 14:58:34: Mouse motion event #10: position x=726, y=272
-2025-06-09 14:58:34: SDL Event #11: Type=1024 at time 58728 ms (elapsed: 58583 ms)
-2025-06-09 14:58:34: Mouse motion event #11: position x=721, y=268
-2025-06-09 14:58:34: SDL Event #12: Type=1024 at time 58750 ms (elapsed: 58605 ms)
-2025-06-09 14:58:34: Mouse motion event #12: position x=715, y=265
-2025-06-09 14:58:34: SDL Event #13: Type=1024 at time 58761 ms (elapsed: 58616 ms)
-2025-06-09 14:58:34: Mouse motion event #13: position x=713, y=263
-2025-06-09 14:58:34: SDL Event #14: Type=1024 at time 58773 ms (elapsed: 58628 ms)
-2025-06-09 14:58:34: Mouse motion event #14: position x=712, y=262
-2025-06-09 14:58:34: SDL Event #15: Type=1024 at time 58794 ms (elapsed: 58649 ms)
-2025-06-09 14:58:34: Mouse motion event #15: position x=709, y=259
-2025-06-09 14:58:34: SDL Event #16: Type=1024 at time 58805 ms (elapsed: 58660 ms)
-2025-06-09 14:58:34: Mouse motion event #16: position x=707, y=259
-2025-06-09 14:58:34: SDL Event #17: Type=1024 at time 58827 ms (elapsed: 58682 ms)
-2025-06-09 14:58:34: Mouse motion event #17: position x=702, y=254
-2025-06-09 14:58:34: SDL Event #18: Type=1024 at time 58838 ms (elapsed: 58693 ms)
-2025-06-09 14:58:34: Mouse motion event #18: position x=698, y=250
-2025-06-09 14:58:34: SDL Event #19: Type=1024 at time 58859 ms (elapsed: 58714 ms)
-2025-06-09 14:58:34: Mouse motion event #19: position x=691, y=244
-2025-06-09 14:58:34: SDL Event #20: Type=1024 at time 58871 ms (elapsed: 58726 ms)
-2025-06-09 14:58:34: Mouse motion event #20: position x=688, y=241
-2025-06-09 14:58:34: SDL Event #21: Type=1024 at time 58883 ms (elapsed: 58738 ms)
-2025-06-09 14:58:34: Mouse motion event #21: position x=687, y=240
-2025-06-09 14:58:34: SDL Event #22: Type=1024 at time 58905 ms (elapsed: 58760 ms)
-2025-06-09 14:58:34: Mouse motion event #22: position x=686, y=239
-2025-06-09 14:58:34: SDL Event #23: Type=1024 at time 58937 ms (elapsed: 58792 ms)
-2025-06-09 14:58:34: Mouse motion event #23: position x=684, y=237
-2025-06-09 14:58:34: SDL Event #24: Type=1024 at time 58981 ms (elapsed: 58836 ms)
-2025-06-09 14:58:34: Mouse motion event #24: position x=684, y=236
-2025-06-09 14:58:34: SDL Event #25: Type=1024 at time 58992 ms (elapsed: 58847 ms)
-2025-06-09 14:58:34: Mouse motion event #25: position x=684, y=235
-2025-06-09 14:58:35: SDL Event #26: Type=1025 at time 59361 ms (elapsed: 59216 ms)
-2025-06-09 14:58:35: Mouse button DOWN event #26 received at 59361 ms
-2025-06-09 14:58:35: Mouse position for event #26: x=684, y=235
-2025-06-09 14:58:35: SDL Event #27: Type=1026 at time 59580 ms (elapsed: 59435 ms)
-2025-06-09 14:58:35: Mouse button UP event #27 received at 59580 ms
-2025-06-09 14:58:35: Mouse position for event #27: x=684, y=235
-2025-06-09 14:58:36: SDL Event #28: Type=1024 at time 60437 ms (elapsed: 60292 ms)
-2025-06-09 14:58:36: Mouse motion event #28: position x=721, y=256
-2025-06-09 14:58:36: SDL Event #29: Type=1024 at time 60449 ms (elapsed: 60304 ms)
-2025-06-09 14:58:36: Mouse motion event #29: position x=766, y=279
-2025-06-09 14:58:36: SDL Event #30: Type=1024 at time 60482 ms (elapsed: 60337 ms)
-2025-06-09 14:58:36: Mouse motion event #30: position x=799, y=335
-2025-06-09 14:58:36: SDL Event #31: Type=512 at time 60482 ms (elapsed: 60337 ms)
-2025-06-09 14:58:38: Still running... loop count: 4000, time: 62811 ms (elapsed: 62666 ms)
-2025-06-09 14:58:38: LVGL timer status: 0 active timers
-2025-06-09 14:58:41: SDL Event #32: Type=512 at time 65510 ms (elapsed: 65365 ms)
-2025-06-09 14:58:41: SDL Event #33: Type=1024 at time 65510 ms (elapsed: 65365 ms)
-2025-06-09 14:58:41: Mouse motion event #33: position x=786, y=226
-2025-06-09 14:58:41: SDL Event #34: Type=1024 at time 65531 ms (elapsed: 65386 ms)
-2025-06-09 14:58:41: Mouse motion event #34: position x=748, y=197
-2025-06-09 14:58:41: SDL Event #35: Type=1024 at time 65541 ms (elapsed: 65396 ms)
-2025-06-09 14:58:41: Mouse motion event #35: position x=739, y=188
-2025-06-09 14:58:41: SDL Event #36: Type=1024 at time 65564 ms (elapsed: 65419 ms)
-2025-06-09 14:58:41: Mouse motion event #36: position x=719, y=169
-2025-06-09 14:58:41: SDL Event #37: Type=1024 at time 65574 ms (elapsed: 65429 ms)
-2025-06-09 14:58:41: Mouse motion event #37: position x=712, y=161
-2025-06-09 14:58:41: SDL Event #38: Type=1024 at time 65585 ms (elapsed: 65440 ms)
-2025-06-09 14:58:41: Mouse motion event #38: position x=706, y=153
-2025-06-09 14:58:41: SDL Event #39: Type=1024 at time 65606 ms (elapsed: 65461 ms)
-2025-06-09 14:58:41: Mouse motion event #39: position x=699, y=147
-2025-06-09 14:58:41: SDL Event #40: Type=1024 at time 65616 ms (elapsed: 65471 ms)
-2025-06-09 14:58:41: Mouse motion event #40: position x=696, y=144
-2025-06-09 14:58:41: SDL Event #41: Type=1024 at time 65637 ms (elapsed: 65492 ms)
-2025-06-09 14:58:41: Mouse motion event #41: position x=688, y=139
-2025-06-09 14:58:41: SDL Event #42: Type=1024 at time 65647 ms (elapsed: 65502 ms)
-2025-06-09 14:58:41: Mouse motion event #42: position x=680, y=134
-2025-06-09 14:58:41: SDL Event #43: Type=1024 at time 65669 ms (elapsed: 65524 ms)
-2025-06-09 14:58:41: Mouse motion event #43: position x=668, y=130
-2025-06-09 14:58:41: SDL Event #44: Type=1024 at time 65679 ms (elapsed: 65534 ms)
-2025-06-09 14:58:41: Mouse motion event #44: position x=663, y=128
-2025-06-09 14:58:41: SDL Event #45: Type=1024 at time 65700 ms (elapsed: 65555 ms)
-2025-06-09 14:58:41: Mouse motion event #45: position x=654, y=126
-2025-06-09 14:58:41: SDL Event #46: Type=1024 at time 65711 ms (elapsed: 65566 ms)
-2025-06-09 14:58:41: Mouse motion event #46: position x=647, y=125
-2025-06-09 14:58:41: SDL Event #47: Type=1024 at time 65732 ms (elapsed: 65587 ms)
-2025-06-09 14:58:41: Mouse motion event #47: position x=638, y=125
-2025-06-09 14:58:41: SDL Event #48: Type=1024 at time 65743 ms (elapsed: 65598 ms)
-2025-06-09 14:58:41: Mouse motion event #48: position x=627, y=126
-2025-06-09 14:58:41: SDL Event #49: Type=1024 at time 65764 ms (elapsed: 65619 ms)
-2025-06-09 14:58:41: Mouse motion event #49: position x=615, y=128
-2025-06-09 14:58:41: SDL Event #50: Type=1024 at time 65775 ms (elapsed: 65630 ms)
-2025-06-09 14:58:41: Mouse motion event #50: position x=607, y=128
-2025-06-09 14:58:41: SDL Event #51: Type=1024 at time 65796 ms (elapsed: 65651 ms)
-2025-06-09 14:58:41: Mouse motion event #51: position x=599, y=125
-2025-06-09 14:58:41: SDL Event #52: Type=1024 at time 65807 ms (elapsed: 65662 ms)
-2025-06-09 14:58:41: Mouse motion event #52: position x=597, y=124
-2025-06-09 14:58:41: SDL Event #53: Type=1024 at time 65828 ms (elapsed: 65683 ms)
-2025-06-09 14:58:41: Mouse motion event #53: position x=583, y=117
-2025-06-09 14:58:41: SDL Event #54: Type=1024 at time 65839 ms (elapsed: 65694 ms)
-2025-06-09 14:58:41: Mouse motion event #54: position x=570, y=109
-2025-06-09 14:58:41: SDL Event #55: Type=1024 at time 65861 ms (elapsed: 65716 ms)
-2025-06-09 14:58:41: Mouse motion event #55: position x=547, y=91
-2025-06-09 14:58:41: SDL Event #56: Type=1024 at time 65871 ms (elapsed: 65726 ms)
-2025-06-09 14:58:41: Mouse motion event #56: position x=533, y=80
-2025-06-09 14:58:41: SDL Event #57: Type=1024 at time 65882 ms (elapsed: 65737 ms)
-2025-06-09 14:58:41: Mouse motion event #57: position x=528, y=75
-2025-06-09 14:58:41: SDL Event #58: Type=1024 at time 65904 ms (elapsed: 65759 ms)
-2025-06-09 14:58:41: Mouse motion event #58: position x=510, y=63
-2025-06-09 14:58:41: SDL Event #59: Type=1024 at time 65915 ms (elapsed: 65770 ms)
-2025-06-09 14:58:41: Mouse motion event #59: position x=498, y=56
-2025-06-09 14:58:41: SDL Event #60: Type=1024 at time 65937 ms (elapsed: 65792 ms)
-2025-06-09 14:58:41: Mouse motion event #60: position x=476, y=43
-2025-06-09 14:58:41: SDL Event #61: Type=1024 at time 65949 ms (elapsed: 65804 ms)
-2025-06-09 14:58:41: Mouse motion event #61: position x=468, y=36
-2025-06-09 14:58:41: SDL Event #62: Type=1024 at time 65960 ms (elapsed: 65815 ms)
-2025-06-09 14:58:41: Mouse motion event #62: position x=464, y=33
-2025-06-09 14:58:42: SDL Event #63: Type=1024 at time 66371 ms (elapsed: 66226 ms)
-2025-06-09 14:58:42: Mouse motion event #63: position x=464, y=29
-2025-06-09 14:58:42: SDL Event #64: Type=1024 at time 66383 ms (elapsed: 66238 ms)
-2025-06-09 14:58:42: Mouse motion event #64: position x=462, y=25
-2025-06-09 14:58:42: SDL Event #65: Type=1024 at time 66404 ms (elapsed: 66259 ms)
-2025-06-09 14:58:42: Mouse motion event #65: position x=461, y=22
-2025-06-09 14:58:42: SDL Event #66: Type=1024 at time 66416 ms (elapsed: 66271 ms)
-2025-06-09 14:58:42: Mouse motion event #66: position x=461, y=20
-2025-06-09 14:58:42: SDL Event #67: Type=1024 at time 66437 ms (elapsed: 66292 ms)
-2025-06-09 14:58:42: Mouse motion event #67: position x=460, y=16
-2025-06-09 14:58:42: SDL Event #68: Type=1024 at time 66449 ms (elapsed: 66304 ms)
-2025-06-09 14:58:42: Mouse motion event #68: position x=459, y=15
-2025-06-09 14:58:42: SDL Event #69: Type=1024 at time 66460 ms (elapsed: 66315 ms)
-2025-06-09 14:58:42: Mouse motion event #69: position x=459, y=14
-2025-06-09 14:58:42: SDL Event #70: Type=1024 at time 66481 ms (elapsed: 66336 ms)
-2025-06-09 14:58:42: Mouse motion event #70: position x=459, y=13
-2025-06-09 14:58:42: SDL Event #71: Type=1024 at time 66492 ms (elapsed: 66347 ms)
-2025-06-09 14:58:42: Mouse motion event #71: position x=459, y=12
-2025-06-09 14:58:42: SDL Event #72: Type=1024 at time 66512 ms (elapsed: 66367 ms)
-2025-06-09 14:58:42: Mouse motion event #72: position x=459, y=9
-2025-06-09 14:58:42: SDL Event #73: Type=1024 at time 66523 ms (elapsed: 66378 ms)
-2025-06-09 14:58:42: Mouse motion event #73: position x=459, y=6
-2025-06-09 14:58:42: SDL Event #74: Type=1024 at time 66523 ms (elapsed: 66378 ms)
-2025-06-09 14:58:42: Mouse motion event #74: position x=459, y=6
-2025-06-09 14:58:42: SDL Event #75: Type=1024 at time 66544 ms (elapsed: 66399 ms)
-2025-06-09 14:58:42: Mouse motion event #75: position x=459, y=1
-2025-06-09 14:58:42: SDL Event #76: Type=1024 at time 66556 ms (elapsed: 66411 ms)
-2025-06-09 14:58:42: Mouse motion event #76: position x=459, y=0
-2025-06-09 14:58:42: SDL Event #77: Type=1024 at time 66579 ms (elapsed: 66434 ms)
-2025-06-09 14:58:42: Mouse motion event #77: position x=459, y=0
-2025-06-09 14:58:42: SDL Event #78: Type=512 at time 66579 ms (elapsed: 66434 ms)
-2025-06-09 14:58:44: SDL Event #79: Type=512 at time 68388 ms (elapsed: 68243 ms)
-2025-06-09 14:58:44: SDL Event #80: Type=512 at time 68389 ms (elapsed: 68244 ms)
-2025-06-09 14:58:44: SDL Event #81: Type=512 at time 68983 ms (elapsed: 68838 ms)
-2025-06-09 14:58:44: SDL Event #82: Type=1024 at time 68983 ms (elapsed: 68838 ms)
-2025-06-09 14:58:44: Mouse motion event #82: position x=675, y=1
-2025-06-09 14:58:44: SDL Event #83: Type=1024 at time 68995 ms (elapsed: 68850 ms)
-2025-06-09 14:58:44: Mouse motion event #83: position x=736, y=14
-2025-06-09 14:58:44: SDL Event #84: Type=1024 at time 69017 ms (elapsed: 68872 ms)
-2025-06-09 14:58:44: Mouse motion event #84: position x=794, y=26
-2025-06-09 14:58:44: SDL Event #85: Type=1024 at time 69038 ms (elapsed: 68893 ms)
-2025-06-09 14:58:44: Mouse motion event #85: position x=799, y=35
-2025-06-09 14:58:44: SDL Event #86: Type=512 at time 69038 ms (elapsed: 68893 ms)
-2025-06-09 14:58:55: Still running... loop count: 5000, time: 79428 ms (elapsed: 79283 ms)
-2025-06-09 14:58:55: LVGL timer status: 0 active timers
-2025-06-09 14:59:10: Still running... loop count: 6000, time: 95062 ms (elapsed: 94917 ms)
-2025-06-09 14:59:10: LVGL timer status: 0 active timers
-2025-06-09 14:59:26: Still running... loop count: 7000, time: 110680 ms (elapsed: 110535 ms)
-2025-06-09 14:59:26: LVGL timer status: 0 active timers
-2025-06-09 14:59:41: Still running... loop count: 8000, time: 126307 ms (elapsed: 126162 ms)
-2025-06-09 14:59:41: LVGL timer status: 0 active timers
-2025-06-09 14:59:57: Still running... loop count: 9000, time: 141937 ms (elapsed: 141792 ms)
-2025-06-09 14:59:57: LVGL timer status: 0 active timers
-2025-06-09 15:00:13: Still running... loop count: 10000, time: 157559 ms (elapsed: 157414 ms)
-2025-06-09 15:00:13: LVGL timer status: 0 active timers
-2025-06-09 15:00:28: Still running... loop count: 11000, time: 173183 ms (elapsed: 173038 ms)
-2025-06-09 15:00:28: LVGL timer status: 0 active timers
-2025-06-09 15:00:44: Still running... loop count: 12000, time: 188812 ms (elapsed: 188667 ms)
-2025-06-09 15:00:44: LVGL timer status: 0 active timers
-2025-06-09 15:01:00: Still running... loop count: 13000, time: 204434 ms (elapsed: 204289 ms)
-2025-06-09 15:01:00: LVGL timer status: 0 active timers
-2025-06-09 15:01:15: Still running... loop count: 14000, time: 220056 ms (elapsed: 219911 ms)
-2025-06-09 15:01:15: LVGL timer status: 0 active timers
-2025-06-09 15:01:31: Still running... loop count: 15000, time: 235684 ms (elapsed: 235539 ms)
-2025-06-09 15:01:31: LVGL timer status: 0 active timers
-2025-06-09 15:01:46: Still running... loop count: 16000, time: 251313 ms (elapsed: 251168 ms)
-2025-06-09 15:01:46: LVGL timer status: 0 active timers
-2025-06-09 15:02:02: Still running... loop count: 17000, time: 266937 ms (elapsed: 266792 ms)
-2025-06-09 15:02:02: LVGL timer status: 0 active timers
-2025-06-09 15:02:18: Still running... loop count: 18000, time: 282563 ms (elapsed: 282418 ms)
-2025-06-09 15:02:18: LVGL timer status: 0 active timers
-2025-06-09 15:02:33: Still running... loop count: 19000, time: 298179 ms (elapsed: 298034 ms)
-2025-06-09 15:02:33: LVGL timer status: 0 active timers
-2025-06-09 15:02:49: Still running... loop count: 20000, time: 313812 ms (elapsed: 313667 ms)
-2025-06-09 15:02:49: LVGL timer status: 0 active timers
-2025-06-09 15:03:05: Still running... loop count: 21000, time: 329434 ms (elapsed: 329289 ms)
-2025-06-09 15:03:05: LVGL timer status: 0 active timers
-2025-06-09 15:03:20: Still running... loop count: 22000, time: 345055 ms (elapsed: 344910 ms)
-2025-06-09 15:03:20: LVGL timer status: 0 active timers
-2025-06-09 15:03:36: Still running... loop count: 23000, time: 360688 ms (elapsed: 360543 ms)
-2025-06-09 15:03:36: LVGL timer status: 0 active timers
-2025-06-09 15:03:51: Still running... loop count: 24000, time: 376306 ms (elapsed: 376161 ms)
-2025-06-09 15:03:51: LVGL timer status: 0 active timers
-2025-06-09 15:04:07: Still running... loop count: 25000, time: 391934 ms (elapsed: 391789 ms)
-2025-06-09 15:04:07: LVGL timer status: 0 active timers
-2025-06-09 15:04:23: Still running... loop count: 26000, time: 407562 ms (elapsed: 407417 ms)
-2025-06-09 15:04:23: LVGL timer status: 0 active timers
-2025-06-09 15:04:38: Still running... loop count: 27000, time: 423187 ms (elapsed: 423042 ms)
-2025-06-09 15:04:38: LVGL timer status: 0 active timers
-2025-06-09 15:04:54: Still running... loop count: 28000, time: 438806 ms (elapsed: 438661 ms)
-2025-06-09 15:04:54: LVGL timer status: 0 active timers
-2025-06-09 15:05:10: Still running... loop count: 29000, time: 454433 ms (elapsed: 454288 ms)
-2025-06-09 15:05:10: LVGL timer status: 0 active timers
-2025-06-09 15:05:25: Still running... loop count: 30000, time: 470054 ms (elapsed: 469909 ms)
-2025-06-09 15:05:25: LVGL timer status: 0 active timers
-2025-06-09 15:05:41: Still running... loop count: 31000, time: 485687 ms (elapsed: 485542 ms)
-2025-06-09 15:05:41: LVGL timer status: 0 active timers
-2025-06-09 15:05:56: Still running... loop count: 32000, time: 501311 ms (elapsed: 501166 ms)
-2025-06-09 15:05:56: LVGL timer status: 0 active timers
-2025-06-09 15:06:12: Still running... loop count: 33000, time: 516931 ms (elapsed: 516786 ms)
-2025-06-09 15:06:12: LVGL timer status: 0 active timers
-2025-06-09 15:06:28: Still running... loop count: 34000, time: 532559 ms (elapsed: 532414 ms)
-2025-06-09 15:06:28: LVGL timer status: 0 active timers
-2025-06-09 15:06:43: Still running... loop count: 35000, time: 548187 ms (elapsed: 548042 ms)
-2025-06-09 15:06:43: LVGL timer status: 0 active timers
-2025-06-09 15:06:59: Still running... loop count: 36000, time: 563812 ms (elapsed: 563667 ms)
-2025-06-09 15:06:59: LVGL timer status: 0 active timers
-2025-06-09 15:07:15: Still running... loop count: 37000, time: 579431 ms (elapsed: 579286 ms)
-2025-06-09 15:07:15: LVGL timer status: 0 active timers
-2025-06-09 15:07:30: Still running... loop count: 38000, time: 595054 ms (elapsed: 594909 ms)
-2025-06-09 15:07:30: LVGL timer status: 0 active timers
-2025-06-09 15:07:46: Still running... loop count: 39000, time: 610678 ms (elapsed: 610533 ms)
-2025-06-09 15:07:46: LVGL timer status: 0 active timers
-2025-06-09 15:08:01: Still running... loop count: 40000, time: 626306 ms (elapsed: 626161 ms)
-2025-06-09 15:08:01: LVGL timer status: 0 active timers
-2025-06-09 15:08:17: Still running... loop count: 41000, time: 641929 ms (elapsed: 641784 ms)
-2025-06-09 15:08:17: LVGL timer status: 0 active timers
-2025-06-09 15:08:33: Still running... loop count: 42000, time: 657556 ms (elapsed: 657411 ms)
-2025-06-09 15:08:33: LVGL timer status: 0 active timers
-2025-06-09 15:08:48: Still running... loop count: 43000, time: 673181 ms (elapsed: 673036 ms)
-2025-06-09 15:08:48: LVGL timer status: 0 active timers
-2025-06-09 15:09:04: Still running... loop count: 44000, time: 688807 ms (elapsed: 688662 ms)
-2025-06-09 15:09:04: LVGL timer status: 0 active timers
-2025-06-09 15:09:20: Still running... loop count: 45000, time: 704437 ms (elapsed: 704292 ms)
-2025-06-09 15:09:20: LVGL timer status: 0 active timers
-2025-06-09 15:09:35: Still running... loop count: 46000, time: 720057 ms (elapsed: 719912 ms)
-2025-06-09 15:09:35: LVGL timer status: 0 active timers
-2025-06-09 15:09:51: Still running... loop count: 47000, time: 735684 ms (elapsed: 735539 ms)
-2025-06-09 15:09:51: LVGL timer status: 0 active timers
-2025-06-09 15:10:06: Still running... loop count: 48000, time: 751304 ms (elapsed: 751159 ms)
-2025-06-09 15:10:06: LVGL timer status: 0 active timers
-2025-06-09 15:10:22: Still running... loop count: 49000, time: 766937 ms (elapsed: 766792 ms)
-2025-06-09 15:10:22: LVGL timer status: 0 active timers
-2025-06-09 15:10:38: Still running... loop count: 50000, time: 782553 ms (elapsed: 782408 ms)
-2025-06-09 15:10:38: LVGL timer status: 0 active timers
-2025-06-09 15:10:53: Still running... loop count: 51000, time: 798184 ms (elapsed: 798039 ms)
-2025-06-09 15:10:53: LVGL timer status: 0 active timers
-2025-06-09 15:11:09: Still running... loop count: 52000, time: 813810 ms (elapsed: 813665 ms)
-2025-06-09 15:11:09: LVGL timer status: 0 active timers
-2025-06-09 15:11:25: Still running... loop count: 53000, time: 829438 ms (elapsed: 829293 ms)
-2025-06-09 15:11:25: LVGL timer status: 0 active timers
-2025-06-09 15:11:40: Still running... loop count: 54000, time: 845062 ms (elapsed: 844917 ms)
-2025-06-09 15:11:40: LVGL timer status: 0 active timers
-2025-06-09 15:11:56: Still running... loop count: 55000, time: 860681 ms (elapsed: 860536 ms)
-2025-06-09 15:11:56: LVGL timer status: 0 active timers
-2025-06-09 15:12:11: Still running... loop count: 56000, time: 876309 ms (elapsed: 876164 ms)
-2025-06-09 15:12:11: LVGL timer status: 0 active timers
-2025-06-09 15:12:27: Still running... loop count: 57000, time: 891937 ms (elapsed: 891792 ms)
-2025-06-09 15:12:27: LVGL timer status: 0 active timers
-2025-06-09 15:12:43: Still running... loop count: 58000, time: 907559 ms (elapsed: 907414 ms)
-2025-06-09 15:12:43: LVGL timer status: 0 active timers
-2025-06-09 15:12:58: Still running... loop count: 59000, time: 923181 ms (elapsed: 923036 ms)
-2025-06-09 15:12:58: LVGL timer status: 0 active timers
-2025-06-09 15:13:14: Still running... loop count: 60000, time: 938812 ms (elapsed: 938667 ms)
-2025-06-09 15:13:14: LVGL timer status: 0 active timers
-2025-06-09 15:13:30: Still running... loop count: 61000, time: 954433 ms (elapsed: 954288 ms)
-2025-06-09 15:13:30: LVGL timer status: 0 active timers
-2025-06-09 15:13:45: Still running... loop count: 62000, time: 970054 ms (elapsed: 969909 ms)
-2025-06-09 15:13:45: LVGL timer status: 0 active timers
-2025-06-09 15:14:01: Still running... loop count: 63000, time: 985687 ms (elapsed: 985542 ms)
-2025-06-09 15:14:01: LVGL timer status: 0 active timers
-2025-06-09 15:14:16: Still running... loop count: 64000, time: 1001305 ms (elapsed: 1001160 ms)
-2025-06-09 15:14:16: LVGL timer status: 0 active timers
-2025-06-09 15:14:32: Still running... loop count: 65000, time: 1016929 ms (elapsed: 1016784 ms)
-2025-06-09 15:14:32: LVGL timer status: 0 active timers
-2025-06-09 15:14:48: Still running... loop count: 66000, time: 1032556 ms (elapsed: 1032411 ms)
-2025-06-09 15:14:48: LVGL timer status: 0 active timers
-2025-06-09 15:15:03: Still running... loop count: 67000, time: 1048183 ms (elapsed: 1048038 ms)
-2025-06-09 15:15:03: LVGL timer status: 0 active timers
-2025-06-09 15:15:19: Still running... loop count: 68000, time: 1063813 ms (elapsed: 1063668 ms)
-2025-06-09 15:15:19: LVGL timer status: 0 active timers
-2025-06-09 15:15:35: Still running... loop count: 69000, time: 1079434 ms (elapsed: 1079289 ms)
-2025-06-09 15:15:35: LVGL timer status: 0 active timers
-2025-06-09 15:15:50: Still running... loop count: 70000, time: 1095061 ms (elapsed: 1094916 ms)
-2025-06-09 15:15:50: LVGL timer status: 0 active timers
-2025-06-09 15:16:06: Still running... loop count: 71000, time: 1110687 ms (elapsed: 1110542 ms)
-2025-06-09 15:16:06: LVGL timer status: 0 active timers
-2025-06-09 15:16:21: Still running... loop count: 72000, time: 1126306 ms (elapsed: 1126161 ms)
-2025-06-09 15:16:21: LVGL timer status: 0 active timers
-2025-06-09 15:16:37: Still running... loop count: 73000, time: 1141933 ms (elapsed: 1141788 ms)
-2025-06-09 15:16:37: LVGL timer status: 0 active timers
-2025-06-09 15:16:53: Still running... loop count: 74000, time: 1157556 ms (elapsed: 1157411 ms)
-2025-06-09 15:16:53: LVGL timer status: 0 active timers
-2025-06-09 15:17:08: Still running... loop count: 75000, time: 1173188 ms (elapsed: 1173043 ms)
-2025-06-09 15:17:08: LVGL timer status: 0 active timers
-2025-06-09 15:17:24: Still running... loop count: 76000, time: 1188804 ms (elapsed: 1188659 ms)
-2025-06-09 15:17:24: LVGL timer status: 0 active timers
-2025-06-09 15:17:40: Still running... loop count: 77000, time: 1204428 ms (elapsed: 1204283 ms)
-2025-06-09 15:17:40: LVGL timer status: 0 active timers
-2025-06-09 15:17:55: Still running... loop count: 78000, time: 1220059 ms (elapsed: 1219914 ms)
-2025-06-09 15:17:55: LVGL timer status: 0 active timers
-2025-06-09 15:18:11: Still running... loop count: 79000, time: 1235687 ms (elapsed: 1235542 ms)
-2025-06-09 15:18:11: LVGL timer status: 0 active timers
-2025-06-09 15:18:26: Still running... loop count: 80000, time: 1251308 ms (elapsed: 1251163 ms)
-2025-06-09 15:18:26: LVGL timer status: 0 active timers
-2025-06-09 15:18:42: Still running... loop count: 81000, time: 1266928 ms (elapsed: 1266783 ms)
-2025-06-09 15:18:42: LVGL timer status: 0 active timers
-2025-06-09 15:18:58: Still running... loop count: 82000, time: 1282553 ms (elapsed: 1282408 ms)
-2025-06-09 15:18:58: LVGL timer status: 0 active timers
-2025-06-09 15:19:13: Still running... loop count: 83000, time: 1298181 ms (elapsed: 1298036 ms)
-2025-06-09 15:19:13: LVGL timer status: 0 active timers
-2025-06-09 15:19:29: Still running... loop count: 84000, time: 1313809 ms (elapsed: 1313664 ms)
-2025-06-09 15:19:29: LVGL timer status: 0 active timers
-2025-06-09 15:19:45: Still running... loop count: 85000, time: 1329429 ms (elapsed: 1329284 ms)
-2025-06-09 15:19:45: LVGL timer status: 0 active timers
-2025-06-09 15:20:00: Still running... loop count: 86000, time: 1345063 ms (elapsed: 1344918 ms)
-2025-06-09 15:20:00: LVGL timer status: 0 active timers
-2025-06-09 15:20:16: Still running... loop count: 87000, time: 1360686 ms (elapsed: 1360541 ms)
-2025-06-09 15:20:16: LVGL timer status: 0 active timers
-2025-06-09 15:20:31: Still running... loop count: 88000, time: 1376307 ms (elapsed: 1376162 ms)
-2025-06-09 15:20:31: LVGL timer status: 0 active timers
-2025-06-09 15:20:37: SDL Event #87: Type=512 at time 1381641 ms (elapsed: 1381496 ms)
-2025-06-09 15:20:37: SDL Event #88: Type=1024 at time 1381641 ms (elapsed: 1381496 ms)
-2025-06-09 15:20:37: Mouse motion event #88: position x=767, y=89
-2025-06-09 15:20:37: SDL Event #89: Type=1024 at time 1381652 ms (elapsed: 1381507 ms)
-2025-06-09 15:20:37: Mouse motion event #89: position x=635, y=101
-2025-06-09 15:20:37: SDL Event #90: Type=1024 at time 1381673 ms (elapsed: 1381528 ms)
-2025-06-09 15:20:37: Mouse motion event #90: position x=464, y=147
-2025-06-09 15:20:37: SDL Event #91: Type=1024 at time 1381683 ms (elapsed: 1381538 ms)
-2025-06-09 15:20:37: Mouse motion event #91: position x=422, y=168
-2025-06-09 15:20:37: SDL Event #92: Type=1024 at time 1381694 ms (elapsed: 1381549 ms)
-2025-06-09 15:20:37: Mouse motion event #92: position x=359, y=215
-2025-06-09 15:20:37: SDL Event #93: Type=1024 at time 1381716 ms (elapsed: 1381571 ms)
-2025-06-09 15:20:37: Mouse motion event #93: position x=295, y=283
-2025-06-09 15:20:37: SDL Event #94: Type=1024 at time 1381727 ms (elapsed: 1381582 ms)
-2025-06-09 15:20:37: Mouse motion event #94: position x=267, y=316
-2025-06-09 15:20:37: SDL Event #95: Type=1024 at time 1381748 ms (elapsed: 1381603 ms)
-2025-06-09 15:20:37: Mouse motion event #95: position x=221, y=375
-2025-06-09 15:20:37: SDL Event #96: Type=1024 at time 1381760 ms (elapsed: 1381615 ms)
-2025-06-09 15:20:37: Mouse motion event #96: position x=181, y=430
-2025-06-09 15:20:37: SDL Event #97: Type=1024 at time 1381782 ms (elapsed: 1381637 ms)
-2025-06-09 15:20:37: Mouse motion event #97: position x=156, y=475
-2025-06-09 15:20:37: SDL Event #98: Type=1024 at time 1381813 ms (elapsed: 1381668 ms)
-2025-06-09 15:20:37: Mouse motion event #98: position x=154, y=479
-2025-06-09 15:20:37: SDL Event #99: Type=512 at time 1381813 ms (elapsed: 1381668 ms)
-2025-06-09 15:20:37: SDL Event #100: Type=512 at time 1381919 ms (elapsed: 1381774 ms)
-2025-06-09 15:20:37: SDL Event #101: Type=1024 at time 1381919 ms (elapsed: 1381774 ms)
-2025-06-09 15:20:37: Mouse motion event #101: position x=361, y=466
-2025-06-09 15:20:37: SDL Event #102: Type=1024 at time 1381929 ms (elapsed: 1381784 ms)
-2025-06-09 15:20:37: Mouse motion event #102: position x=384, y=455
-2025-06-09 15:20:37: SDL Event #103: Type=1024 at time 1381951 ms (elapsed: 1381806 ms)
-2025-06-09 15:20:37: Mouse motion event #103: position x=407, y=438
-2025-06-09 15:20:37: SDL Event #104: Type=1024 at time 1381962 ms (elapsed: 1381817 ms)
-2025-06-09 15:20:37: Mouse motion event #104: position x=420, y=425
-2025-06-09 15:20:37: SDL Event #105: Type=1024 at time 1381983 ms (elapsed: 1381838 ms)
-2025-06-09 15:20:37: Mouse motion event #105: position x=439, y=399
-2025-06-09 15:20:37: SDL Event #106: Type=1024 at time 1381994 ms (elapsed: 1381849 ms)
-2025-06-09 15:20:37: Mouse motion event #106: position x=462, y=357
-2025-06-09 15:20:37: SDL Event #107: Type=1024 at time 1382015 ms (elapsed: 1381870 ms)
-2025-06-09 15:20:37: Mouse motion event #107: position x=509, y=285
-2025-06-09 15:20:37: SDL Event #108: Type=1024 at time 1382026 ms (elapsed: 1381881 ms)
-2025-06-09 15:20:37: Mouse motion event #108: position x=565, y=206
-2025-06-09 15:20:37: SDL Event #109: Type=1024 at time 1382047 ms (elapsed: 1381902 ms)
-2025-06-09 15:20:37: Mouse motion event #109: position x=643, y=118
-2025-06-09 15:20:37: SDL Event #110: Type=1024 at time 1382057 ms (elapsed: 1381912 ms)
-2025-06-09 15:20:37: Mouse motion event #110: position x=664, y=97
-2025-06-09 15:20:37: SDL Event #111: Type=1024 at time 1382079 ms (elapsed: 1381934 ms)
-2025-06-09 15:20:37: Mouse motion event #111: position x=697, y=67
-2025-06-09 15:20:37: SDL Event #112: Type=1024 at time 1382089 ms (elapsed: 1381944 ms)
-2025-06-09 15:20:37: Mouse motion event #112: position x=723, y=41
-2025-06-09 15:20:37: SDL Event #113: Type=1024 at time 1382110 ms (elapsed: 1381965 ms)
-2025-06-09 15:20:37: Mouse motion event #113: position x=744, y=19
-2025-06-09 15:20:37: SDL Event #114: Type=1024 at time 1382121 ms (elapsed: 1381976 ms)
-2025-06-09 15:20:37: Mouse motion event #114: position x=760, y=2
-2025-06-09 15:20:37: SDL Event #115: Type=1024 at time 1382132 ms (elapsed: 1381987 ms)
-2025-06-09 15:20:37: Mouse motion event #115: position x=767, y=0
-2025-06-09 15:20:37: SDL Event #116: Type=512 at time 1382132 ms (elapsed: 1381987 ms)
-2025-06-09 15:20:38: SDL Event #117: Type=512 at time 1383230 ms (elapsed: 1383085 ms)
-2025-06-09 15:20:38: SDL Event #118: Type=256 at time 1383230 ms (elapsed: 1383085 ms)
-2025-06-09 15:20:38: Received SDL_QUIT event #118 at 1383230 ms (elapsed: 1383085 ms)
-2025-06-09 15:20:38: SDLInputHandler::processEvents() returning true (quit) after 1383085 ms
-2025-06-09 15:20:38: Quitting due to SDL event at time: 1383230 ms (elapsed: 1383085 ms)
-2025-06-09 15:20:38: Main loop exited with quit = 1
-2025-06-09 15:20:38: Simulator shutting down
+2025-06-13 13:12:51: Simulator starting...
+2025-06-13 13:12:51: SDL backend initialized successfully
+2025-06-13 13:12:51: LVGL initialized
+2025-06-13 13:12:51: Display buffer initialized
+2025-06-13 13:12:51: Display driver registered
+2025-06-13 13:12:51: Mouse input device registered
+2025-06-13 13:12:51: DisplayManager and DisplayFactory initialized
+2025-06-13 13:12:51: SimulatorDisplayAdapter registered with DisplayManager
+2025-06-13 13:12:51: NOTICE: Skipping race screen display to prevent potential crash
+2025-06-13 13:12:51: Simple LVGL screen created successfully
+2025-06-13 13:12:51: Race screen update timer created
+2025-06-13 13:12:51: Entering main loop at time: 297 ms
+2025-06-13 13:12:51: SDLInputHandler started at: 297 ms
+2025-06-13 13:12:51: SDL Event #1: Type=512 at time 311 ms (elapsed: 14 ms)
+2025-06-13 13:12:51: SDL Event #2: Type=512 at time 311 ms (elapsed: 14 ms)
+2025-06-13 13:12:51: SDL Event #3: Type=770 at time 311 ms (elapsed: 14 ms)
+2025-06-13 13:12:51: SDL Event #4: Type=512 at time 311 ms (elapsed: 14 ms)
+2025-06-13 13:13:03: SDL Event #5: Type=512 at time 11681 ms (elapsed: 11384 ms)
+2025-06-13 13:13:03: SDL Event #6: Type=1024 at time 11681 ms (elapsed: 11384 ms)
+2025-06-13 13:13:03: Mouse motion event #6: position x=123, y=19
+2025-06-13 13:13:03: SDL Event #7: Type=1024 at time 11704 ms (elapsed: 11407 ms)
+2025-06-13 13:13:03: Mouse motion event #7: position x=213, y=0
+2025-06-13 13:13:03: SDL Event #8: Type=512 at time 11705 ms (elapsed: 11408 ms)
+2025-06-13 13:13:03: SDL Event #9: Type=512 at time 11776 ms (elapsed: 11479 ms)
+2025-06-13 13:13:03: SDL Event #10: Type=1024 at time 11776 ms (elapsed: 11479 ms)
+2025-06-13 13:13:03: Mouse motion event #10: position x=574, y=5
+2025-06-13 13:13:03: SDL Event #11: Type=1024 at time 11788 ms (elapsed: 11491 ms)
+2025-06-13 13:13:03: Mouse motion event #11: position x=623, y=29
+2025-06-13 13:13:03: SDL Event #12: Type=1024 at time 11799 ms (elapsed: 11502 ms)
+2025-06-13 13:13:03: Mouse motion event #12: position x=653, y=46
+2025-06-13 13:13:03: SDL Event #13: Type=1024 at time 11822 ms (elapsed: 11525 ms)
+2025-06-13 13:13:03: Mouse motion event #13: position x=676, y=62
+2025-06-13 13:13:03: SDL Event #14: Type=1024 at time 11847 ms (elapsed: 11550 ms)
+2025-06-13 13:13:03: Mouse motion event #14: position x=682, y=65
+2025-06-13 13:13:03: SDL Event #15: Type=1024 at time 11871 ms (elapsed: 11574 ms)
+2025-06-13 13:13:03: Mouse motion event #15: position x=683, y=65
+2025-06-13 13:13:03: SDL Event #16: Type=1024 at time 11929 ms (elapsed: 11632 ms)
+2025-06-13 13:13:03: Mouse motion event #16: position x=682, y=67
+2025-06-13 13:13:03: SDL Event #17: Type=1024 at time 11940 ms (elapsed: 11643 ms)
+2025-06-13 13:13:03: Mouse motion event #17: position x=681, y=69
+2025-06-13 13:13:03: SDL Event #18: Type=1024 at time 11962 ms (elapsed: 11665 ms)
+2025-06-13 13:13:03: Mouse motion event #18: position x=676, y=82
+2025-06-13 13:13:03: SDL Event #19: Type=1024 at time 11975 ms (elapsed: 11678 ms)
+2025-06-13 13:13:03: Mouse motion event #19: position x=669, y=94
+2025-06-13 13:13:03: SDL Event #20: Type=1024 at time 11986 ms (elapsed: 11689 ms)
+2025-06-13 13:13:03: Mouse motion event #20: position x=664, y=102
+2025-06-13 13:13:03: SDL Event #21: Type=1024 at time 12011 ms (elapsed: 11714 ms)
+2025-06-13 13:13:03: Mouse motion event #21: position x=637, y=175
+2025-06-13 13:13:03: SDL Event #22: Type=1024 at time 12011 ms (elapsed: 11714 ms)
+2025-06-13 13:13:03: Mouse motion event #22: position x=637, y=175
+2025-06-13 13:13:03: SDL Event #23: Type=1024 at time 12034 ms (elapsed: 11737 ms)
+2025-06-13 13:13:03: Mouse motion event #23: position x=630, y=217
+2025-06-13 13:13:03: SDL Event #24: Type=1024 at time 12056 ms (elapsed: 11759 ms)
+2025-06-13 13:13:03: Mouse motion event #24: position x=650, y=270
+2025-06-13 13:13:03: SDL Event #25: Type=1024 at time 12080 ms (elapsed: 11783 ms)
+2025-06-13 13:13:03: Mouse motion event #25: position x=689, y=296
+2025-06-13 13:13:03: SDL Event #26: Type=1024 at time 12103 ms (elapsed: 11806 ms)
+2025-06-13 13:13:03: Mouse motion event #26: position x=779, y=326
+2025-06-13 13:13:03: SDL Event #27: Type=1024 at time 12137 ms (elapsed: 11840 ms)
+2025-06-13 13:13:03: Mouse motion event #27: position x=799, y=327
+2025-06-13 13:13:03: SDL Event #28: Type=512 at time 12137 ms (elapsed: 11840 ms)
+2025-06-13 13:13:03: SDL Event #29: Type=512 at time 12302 ms (elapsed: 12005 ms)
+2025-06-13 13:13:03: SDL Event #30: Type=1024 at time 12303 ms (elapsed: 12006 ms)
+2025-06-13 13:13:03: Mouse motion event #30: position x=796, y=122
+2025-06-13 13:13:03: SDL Event #31: Type=1024 at time 12315 ms (elapsed: 12018 ms)
+2025-06-13 13:13:03: Mouse motion event #31: position x=789, y=114
+2025-06-13 13:13:03: SDL Event #32: Type=1024 at time 12340 ms (elapsed: 12043 ms)
+2025-06-13 13:13:03: Mouse motion event #32: position x=771, y=89
+2025-06-13 13:13:03: SDL Event #33: Type=1024 at time 12350 ms (elapsed: 12053 ms)
+2025-06-13 13:13:03: Mouse motion event #33: position x=768, y=87
+2025-06-13 13:13:03: SDL Event #34: Type=1024 at time 12362 ms (elapsed: 12065 ms)
+2025-06-13 13:13:03: Mouse motion event #34: position x=766, y=83
+2025-06-13 13:13:04: SDL Event #35: Type=1024 at time 12385 ms (elapsed: 12088 ms)
+2025-06-13 13:13:04: Mouse motion event #35: position x=764, y=78
+2025-06-13 13:13:04: SDL Event #36: Type=1024 at time 12410 ms (elapsed: 12113 ms)
+2025-06-13 13:13:04: Mouse motion event #36: position x=763, y=74
+2025-06-13 13:13:04: SDL Event #37: Type=1024 at time 12431 ms (elapsed: 12134 ms)
+2025-06-13 13:13:04: Mouse motion event #37: position x=761, y=70
+2025-06-13 13:13:04: SDL Event #38: Type=1024 at time 12465 ms (elapsed: 12168 ms)
+2025-06-13 13:13:04: Mouse motion event #38: position x=759, y=62
+2025-06-13 13:13:04: SDL Event #39: Type=1024 at time 12477 ms (elapsed: 12180 ms)
+2025-06-13 13:13:04: Mouse motion event #39: position x=758, y=60
+2025-06-13 13:13:04: SDL Event #40: Type=1024 at time 12489 ms (elapsed: 12192 ms)
+2025-06-13 13:13:04: Mouse motion event #40: position x=748, y=47
+2025-06-13 13:13:04: SDL Event #41: Type=1024 at time 12511 ms (elapsed: 12214 ms)
+2025-06-13 13:13:04: Mouse motion event #41: position x=735, y=38
+2025-06-13 13:13:04: SDL Event #42: Type=1024 at time 12522 ms (elapsed: 12225 ms)
+2025-06-13 13:13:04: Mouse motion event #42: position x=723, y=30
+2025-06-13 13:13:04: SDL Event #43: Type=1024 at time 12534 ms (elapsed: 12237 ms)
+2025-06-13 13:13:04: Mouse motion event #43: position x=712, y=24
+2025-06-13 13:13:04: SDL Event #44: Type=1024 at time 12556 ms (elapsed: 12259 ms)
+2025-06-13 13:13:04: Mouse motion event #44: position x=702, y=19
+2025-06-13 13:13:04: SDL Event #45: Type=1024 at time 12569 ms (elapsed: 12272 ms)
+2025-06-13 13:13:04: Mouse motion event #45: position x=699, y=18
+2025-06-13 13:13:04: SDL Event #46: Type=1024 at time 12666 ms (elapsed: 12369 ms)
+2025-06-13 13:13:04: Mouse motion event #46: position x=697, y=17
+2025-06-13 13:13:04: SDL Event #47: Type=1024 at time 12678 ms (elapsed: 12381 ms)
+2025-06-13 13:13:04: Mouse motion event #47: position x=695, y=15
+2025-06-13 13:13:04: SDL Event #48: Type=1024 at time 12690 ms (elapsed: 12393 ms)
+2025-06-13 13:13:04: Mouse motion event #48: position x=692, y=13
+2025-06-13 13:13:04: SDL Event #49: Type=1024 at time 12712 ms (elapsed: 12415 ms)
+2025-06-13 13:13:04: Mouse motion event #49: position x=683, y=4
+2025-06-13 13:13:04: SDL Event #50: Type=1024 at time 12726 ms (elapsed: 12429 ms)
+2025-06-13 13:13:04: Mouse motion event #50: position x=677, y=0
+2025-06-13 13:13:04: SDL Event #51: Type=512 at time 12726 ms (elapsed: 12429 ms)
+2025-06-13 13:13:04: SDL Event #52: Type=512 at time 13074 ms (elapsed: 12777 ms)
+2025-06-13 13:13:04: SDL Event #53: Type=1024 at time 13074 ms (elapsed: 12777 ms)
+2025-06-13 13:13:04: Mouse motion event #53: position x=676, y=5
+2025-06-13 13:13:04: SDL Event #54: Type=1024 at time 13086 ms (elapsed: 12789 ms)
+2025-06-13 13:13:04: Mouse motion event #54: position x=678, y=13
+2025-06-13 13:13:04: SDL Event #55: Type=1024 at time 13098 ms (elapsed: 12801 ms)
+2025-06-13 13:13:04: Mouse motion event #55: position x=678, y=15
+2025-06-13 13:13:04: SDL Event #56: Type=1024 at time 13119 ms (elapsed: 12822 ms)
+2025-06-13 13:13:04: Mouse motion event #56: position x=678, y=17
+2025-06-13 13:13:04: SDL Event #57: Type=1024 at time 13184 ms (elapsed: 12887 ms)
+2025-06-13 13:13:04: Mouse motion event #57: position x=678, y=15
+2025-06-13 13:13:04: SDL Event #58: Type=1024 at time 13196 ms (elapsed: 12899 ms)
+2025-06-13 13:13:04: Mouse motion event #58: position x=678, y=11
+2025-06-13 13:13:04: SDL Event #59: Type=1024 at time 13208 ms (elapsed: 12911 ms)
+2025-06-13 13:13:04: Mouse motion event #59: position x=677, y=9
+2025-06-13 13:13:04: SDL Event #60: Type=1024 at time 13230 ms (elapsed: 12933 ms)
+2025-06-13 13:13:04: Mouse motion event #60: position x=677, y=6
+2025-06-13 13:13:04: SDL Event #61: Type=1024 at time 13242 ms (elapsed: 12945 ms)
+2025-06-13 13:13:04: Mouse motion event #61: position x=677, y=5
+2025-06-13 13:13:04: SDL Event #62: Type=1024 at time 13307 ms (elapsed: 13010 ms)
+2025-06-13 13:13:04: Mouse motion event #62: position x=678, y=3
+2025-06-13 13:13:04: SDL Event #63: Type=1024 at time 13318 ms (elapsed: 13021 ms)
+2025-06-13 13:13:04: Mouse motion event #63: position x=679, y=2
+2025-06-13 13:13:04: SDL Event #64: Type=1024 at time 13330 ms (elapsed: 13033 ms)
+2025-06-13 13:13:04: Mouse motion event #64: position x=679, y=0
+2025-06-13 13:13:04: SDL Event #65: Type=1024 at time 13353 ms (elapsed: 13056 ms)
+2025-06-13 13:13:04: Mouse motion event #65: position x=684, y=0
+2025-06-13 13:13:04: SDL Event #66: Type=512 at time 13353 ms (elapsed: 13056 ms)
+2025-06-13 13:13:05: SDL Event #67: Type=512 at time 13696 ms (elapsed: 13399 ms)
+2025-06-13 13:13:05: SDL Event #68: Type=512 at time 13696 ms (elapsed: 13399 ms)
+2025-06-13 13:13:05: SDL Event #69: Type=770 at time 13696 ms (elapsed: 13399 ms)
+2025-06-13 13:13:06: WARNING: Simulator has been running for 15010 ms
+2025-06-13 13:13:07: Still running... loop count: 1000, time: 16182 ms (elapsed: 15885 ms)
+2025-06-13 13:13:07: LVGL timer status: 0 active timers
+2025-06-13 13:13:23: Still running... loop count: 2000, time: 32326 ms (elapsed: 32029 ms)
+2025-06-13 13:13:23: LVGL timer status: 0 active timers
+2025-06-13 13:13:43: Still running... loop count: 3000, time: 52038 ms (elapsed: 51741 ms)
+2025-06-13 13:13:43: LVGL timer status: 0 active timers
+2025-06-13 13:13:57: SDL Event #70: Type=512 at time 66376 ms (elapsed: 66079 ms)
+2025-06-13 13:13:58: SDL Event #71: Type=512 at time 66416 ms (elapsed: 66119 ms)
+2025-06-13 13:13:58: SDL Event #72: Type=512 at time 66417 ms (elapsed: 66120 ms)
+2025-06-13 13:13:59: SDL Event #73: Type=768 at time 67482 ms (elapsed: 67185 ms)
+2025-06-13 13:13:59: Keyboard DOWN event #73: key=1073742050 at 67482 ms
+2025-06-13 13:13:59: SDL Event #74: Type=769 at time 67594 ms (elapsed: 67297 ms)
+2025-06-13 13:13:59: SDL Event #75: Type=512 at time 67594 ms (elapsed: 67297 ms)
+2025-06-13 13:13:59: SDL Event #76: Type=770 at time 67594 ms (elapsed: 67297 ms)
+2025-06-13 13:13:59: Still running... loop count: 4000, time: 68352 ms (elapsed: 68055 ms)
+2025-06-13 13:13:59: LVGL timer status: 0 active timers
+2025-06-13 13:14:15: Still running... loop count: 5000, time: 84227 ms (elapsed: 83930 ms)
+2025-06-13 13:14:15: LVGL timer status: 0 active timers
+2025-06-13 13:14:31: Still running... loop count: 6000, time: 100050 ms (elapsed: 99753 ms)
+2025-06-13 13:14:31: LVGL timer status: 0 active timers
+2025-06-13 13:14:47: Still running... loop count: 7000, time: 116274 ms (elapsed: 115977 ms)
+2025-06-13 13:14:47: LVGL timer status: 0 active timers
+2025-06-13 13:15:04: Still running... loop count: 8000, time: 132631 ms (elapsed: 132334 ms)
+2025-06-13 13:15:04: LVGL timer status: 0 active timers
+2025-06-13 13:15:20: Still running... loop count: 9000, time: 148962 ms (elapsed: 148665 ms)
+2025-06-13 13:15:20: LVGL timer status: 0 active timers

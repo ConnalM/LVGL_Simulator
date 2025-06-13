@@ -1,8 +1,7 @@
 #include "SDLInputHandler.h"
 #include <cstdio>
+#include "common/log_message.h"
 
-// Forward declaration of log_message function from main.cpp
-extern void log_message(const char* format, ...);
 
 bool SDLInputHandler::processEvents() {
     static uint32_t startTime = SDL_GetTicks();

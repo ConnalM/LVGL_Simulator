@@ -2,9 +2,8 @@
 #include <cstdarg>
 #include <cstdio>
 #include <string>
+#include "common/log_message.h"
 
-// Forward declaration for log_message from main.cpp
-extern void log_message(const char* format, ...);
 
 SimulatorSerialDisplay::SimulatorSerialDisplay() : _initialized(false), _portName(""), _baudRate(0) {
 }
